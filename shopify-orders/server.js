@@ -6,13 +6,14 @@ const webhookHandler = require('./webhooks/handler');
 const http = require('http');
 const { Server } = require('socket.io');
 
-const app = express(); // ✅ Define app here
+const app = express();
 
-// Allow JSON and raw bodies
+
 app.use(bodyParser.json());
 app.use(bodyParser.raw({ type: 'application/json' }));
 
-// HTTP server with WebSocket
+
+
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
@@ -20,17 +21,18 @@ const io = new Server(server, {
   }
 });
 
-// WebSocket setup
+
 io.on('connection', (socket) => {
   console.log('🔌 WebSocket client connected');
 });
 
-// Broadcast function
+
 function notifyClients(order) {
   io.emit('new-order', order);
 }
 
-// Serve order list API
+
+
 app.get('/orders', async (req, res) => {
   try {
     const [rows] = await db.query(`
@@ -63,7 +65,7 @@ app.post('/webhooks/orders/create', async (req, res) => {
 
   const order = JSON.parse(rawBody);
 
-  // Save order to database (simplified)
+  
   try {
     const orderId = order.id;
     const customer = order.customer;
