@@ -75,6 +75,16 @@ CREATE TABLE line_items (
 );
 
 ```
+## Configure Database  
+
+The file directory - config\db.js
+```sh
+  host: 'localhost',
+  user: 'root',
+  password: '123',
+  database: 'shopify_orders'
+  ```
+
 ## Run Sync Script 
 ```sh
 node sync/fetchOrders.js
