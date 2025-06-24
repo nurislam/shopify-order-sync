@@ -1,4 +1,4 @@
 ## shopify-orders-frontend 
-shopify-orders-frontend/ README.md
+In details shopify-orders-frontend /  README.md
 ## shopify-orders
-shopify-orders/ README.md
+In details shopify-orders / README.md
