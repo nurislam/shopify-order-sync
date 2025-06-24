@@ -33,3 +33,9 @@ npm install axios @mui/material @emotion/react @emotion/styled socket.io-client
 ```bash
 npm run dev
 ```
+
+
+### Run with Docker
+```sh
+docker-compose up --build
+```
